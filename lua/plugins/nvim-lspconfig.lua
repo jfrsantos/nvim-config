@@ -97,30 +97,6 @@ local config = function()
 			"svelte",
 			"vue",
 			"html",
-			"elixir",
-			"eelixir",
-			"heex",
-		},
-	})
-
-    lspconfig.tailwindcss.setup({
-		capabilities = capabilities,
-		filetypes = { "html", "elixir", "eelixir", "heex" },
-		init_options = {
-			userLanguages = {
-				elixir = "html-eex",
-				eelixir = "html-eex",
-				heex = "html-eex",
-			},
-		},
-		settings = {
-			tailwindCSS = {
-				experimental = {
-					classRegex = {
-						'class[:]\\s*"([^"]*)"',
-					},
-				},
-			},
 		},
 	})
 
@@ -138,21 +114,6 @@ local config = function()
 			"clangd",
 			"--offset-encoding=utf-16",
 		},
-	})
-
-	-- Elixir
-	lspconfig.elixirls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		flags = {
-			debounce_text_changes = 150,
-		},
-		elixirLS = {
-			dialyzerEnabled = false,
-			fetchDeps = false,
-		},
-		-- cmd = { "/usr/local/bin/elixir-ls" },
-		cmd = { "/usr/local/Cellar/elixir-ls/0.17.10/libexec/language_server.sh" },
 	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
