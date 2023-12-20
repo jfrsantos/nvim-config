@@ -10,7 +10,7 @@ local config = function()
 
 	require("lualine").setup({
 		options = {
-			theme = "onedark",
+			theme = "nightfly",
 			globalstatus = true,
 		},
 		tabline = {

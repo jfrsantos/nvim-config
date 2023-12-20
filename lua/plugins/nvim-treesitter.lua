@@ -31,6 +31,7 @@ local config = function()
 			"gitignore",
 			"python",
 			"vue",
+            "erlang",
 		},
 		auto_install = true,
 		highlight = {

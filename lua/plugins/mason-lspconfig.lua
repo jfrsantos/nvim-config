@@ -10,7 +10,6 @@ local opts = {
 		"emmet_ls",
 		"jsonls",
 		"clangd",
-		"elixirls",
 	},
 
 	automatic_installation = true,

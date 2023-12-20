@@ -97,6 +97,9 @@ local config = function()
 			"svelte",
 			"vue",
 			"html",
+			"elixir",
+			"eelixir",
+			"heex",
 		},
 	})
 
@@ -114,6 +117,21 @@ local config = function()
 			"clangd",
 			"--offset-encoding=utf-16",
 		},
+	})
+
+	-- Elixir
+	lspconfig.elixirls.setup({
+		cmd = { "/Users/joao.santos/elixir-ls/language_server.sh" },
+		on_attach = on_attach,
+		capabilities = capabilities,
+		settings = {
+			elixirLS = {
+				fetchDeps = false,
+				mixEnv = "test",
+				mixTarget = "",
+			},
+		},
+		root_dir = lspconfig.util.root_pattern(".git") or vim.loop.os_homedir(),
 	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
