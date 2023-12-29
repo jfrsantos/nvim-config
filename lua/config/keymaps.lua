@@ -18,6 +18,10 @@ mapkey("<C-l>", "wincmd l", "t") -- Navigate Right
 mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
 mapkey("<leader>sh", "split", "n") -- Split Horizontally
 
+-- Git
+mapkey("<leader>gb", "Gitsigns toggle_current_line_blame", "n")
+mapkey("<leader>gB", "Gitsigns blame_line", "n")
+
 local api = vim.api
 
 -- Comments

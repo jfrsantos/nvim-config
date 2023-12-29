@@ -1,4 +1,4 @@
 return {
-	"mhinz/vim-mix-format",
+    'elmcast/elm-vim',
     lazy = false,
 }

@@ -134,6 +134,13 @@ local config = function()
 		root_dir = lspconfig.util.root_pattern(".git") or vim.loop.os_homedir(),
 	})
 
+	-- Elm
+	lspconfig.elmls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = { "elm" },
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -170,6 +177,7 @@ local config = function()
 			"c",
 			"cpp",
 			"elixir",
+            "elm",
 		},
 		init_options = {
 			documentFormatting = true,

@@ -5,7 +5,7 @@ local M = {}
 -- set keymaps on the active lsp server
 M.on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
-    vim.lsp.set_log_level('info')
+	vim.lsp.set_log_level("info")
 	mapkey("<leader>fd", "Lspsaga finder", "n", opts) -- go to definition
 	mapkey("<leader>gd", "Lspsaga peek_definition", "n", opts) -- peak definition
 	mapkey("<leader>gD", "Lspsaga goto_definition", "n", opts) -- go to definitio
@@ -23,6 +23,10 @@ M.on_attach = function(client, bufnr)
 
 	if client.name == "elixirls" then
 		mapkey("<Leader>ef", "MixFormat", "n", opts)
+	end
+
+	if client.name == "elmls" then
+		mapkey("<Leader>ef", "ElmFormat", "n", opts)
 	end
 end
 
